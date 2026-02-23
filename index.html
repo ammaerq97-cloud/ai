@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Engineer Roadmap</title>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+<style>
+body{
+    font-family: 'Segoe UI', sans-serif;
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+}
+
+.container{
+    width:95%;
+    max-width:1100px;
+    margin:auto;
+    padding:30px 0;
+}
+
+h1{
+    margin-bottom:30px;
+    font-weight:600;
+}
+
+.mermaid{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    color:black;
+    overflow:auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>AI Engineer Roadmap – From Zero to Professional 🚀</h1>
+
+<pre class="mermaid">
+flowchart TD
+
+Start([Start From Zero])
+
+Phase1[Phase 1 - Programming]
+Phase2[Phase 2 - Mathematics]
+Phase3[Phase 3 - Data Skills]
+Phase4[Phase 4 - Machine Learning]
+Phase5[Phase 5 - Deep Learning]
+Phase6[Phase 6 - Specialization]
+Phase7[Phase 7 - Production]
+Portfolio[Portfolio Projects]
+Final([AI Engineer Level])
+
+Start --> Phase1 --> Phase2 --> Phase3 --> Phase4 --> Phase5 --> Phase6 --> Phase7 --> Portfolio --> Final
+
+%% Phase 1
+PF1[Python Fundamentals]
+PF2[Data Structures]
+PF3[OOP Concepts]
+PF4[Git and GitHub]
+
+Phase1 --> PF1 --> PF2 --> PF3 --> PF4
+
+%% Phase 2
+M1[Linear Algebra]
+M2[Calculus Basics]
+M3[Probability and Statistics]
+M4[Optimization]
+
+Phase2 --> M1 --> M2 --> M3 --> M4
+
+%% Phase 3
+D1[Numpy]
+D2[Pandas]
+D3[Data Cleaning]
+D4[Data Visualization]
+
+Phase3 --> D1 --> D2 --> D3 --> D4
+
+%% Phase 4
+ML1[Supervised Learning]
+ML2[Unsupervised Learning]
+ML3[Model Evaluation]
+ML4[Feature Engineering]
+ML5[Scikit Learn]
+
+Phase4 --> ML1 --> ML2 --> ML3 --> ML4 --> ML5
+
+%% Phase 5
+DL1[Neural Networks]
+DL2[Backpropagation]
+DL3[TensorFlow or PyTorch]
+DL4[CNN]
+DL5[RNN or LSTM]
+DL6[Transformers]
+
+Phase5 --> DL1 --> DL2 --> DL3 --> DL4 --> DL5 --> DL6
+
+%% Phase 6
+S1[Computer Vision]
+S2[NLP]
+S3[Generative AI]
+S4[Reinforcement Learning]
+S5[MLOps]
+
+Phase6 --> S1 --> S2 --> S3 --> S4 --> S5
+
+%% Phase 7
+P1[Docker]
+P2[FastAPI]
+P3[Cloud AWS or GCP]
+P4[Monitoring]
+
+Phase7 --> P1 --> P2 --> P3 --> P4
+
+%% Click Links
+click PF1 "Python Fundamentals.html"
+click PF2 "Data Structures.html"
+click PF3 "OOP Concepts.html"
+click PF4 "Git and GitHub.html"
+
+click M1 "Linear Algebra.html"
+click M2 "Calculus Basics.html"
+click M3 "Probability and Statistics.html"
+click M4 "Optimization.html"
+
+click D1 "Numpy.html"
+click D2 "Pandas.html"
+click D3 "Data Cleaning.html"
+click D4 "Data Visualization.html"
+
+click ML1 "Supervised Learning.html"
+click ML2 "Unsupervised Learning.html"
+click ML3 "Model Evaluation.html"
+click ML4 "Feature Engineering.html"
+click ML5 "Scikit Learn.html"
+
+click DL1 "Neural Networks.html"
+click DL2 "Backpropagation.html"
+click DL3 "TensorFlow or PyTorch.html"
+click DL4 "CNN.html"
+click DL5 "RNN or LSTM.html"
+click DL6 "Transformers.html"
+
+click S1 "Computer Vision.html"
+click S2 "NLP.html"
+click S3 "Generative AI.html"
+click S4 "Reinforcement Learning.html"
+click S5 "MLOps.html"
+
+click P1 "Docker.html"
+click P2 "FastAPI.html"
+click P3 "Cloud AWS or GCP.html"
+click P4 "Monitoring.html"
+
+click Portfolio "Portfolio Projects.html"
+click Final "AI Engineer Level.html"
+</pre>
+
+</div>
+
+<script>
+mermaid.initialize({
+    startOnLoad:true,
+    securityLevel:"loose",
+    theme:"base",
+    themeVariables:{
+        primaryColor:"#e2e8f0",
+        primaryBorderColor:"#94a3b8",
+        primaryTextColor:"#111827",
+        lineColor:"#475569"
+    }
+});
+</script>
+
+</body>
+</html>
