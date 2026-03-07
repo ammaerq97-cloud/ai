@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,54 +10,99 @@
 <style>
 
 body{
-background-color: rgb(87,86,85);
-font-family: Arial, sans-serif;
-direction: rtl;
-text-align: center;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+font-family:Segoe UI,Arial;
+direction:rtl;
+margin:0;
 color:white;
 }
 
 .container{
 max-width:1000px;
-margin:0 auto;
-padding:20px;
-background-color: rgba(54,46,46,0.2);
-border-radius:10px;
+margin:auto;
+padding:40px 20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:10px;
+font-size:32px;
+}
+
+.subtitle{
+text-align:center;
+color:#cbd5e1;
+margin-bottom:40px;
 }
 
 .channel{
-margin:20px 0;
-padding:15px;
-background-color: rgba(165,160,160,0.45);
-border-radius:5px;
+background:#1e293b;
+border-radius:12px;
+padding:20px;
+margin:15px 0;
 cursor:pointer;
 transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
 }
 
 .channel:hover{
-background-color: rgba(167,196,159,0.4);
+background:#334155;
+transform:scale(1.02);
+}
+
+.channel h2{
+margin:0;
+font-size:20px;
 }
 
 .content{
 display:none;
-margin-top:10px;
-font-size:0.95em;
+margin-top:15px;
+padding:15px;
+background:#0f172a;
+border-radius:10px;
+line-height:1.7;
 }
 
 .links{
-margin-top:20px;
+margin-top:15px;
 }
 
 .links a{
-color:red;
+display:inline-block;
+margin:5px;
+padding:8px 14px;
+background:#2563eb;
+color:white;
 text-decoration:none;
-margin-right:10px;
-font-size:18px;
+border-radius:6px;
+font-size:14px;
+transition:0.3s;
+}
+
+.links a:hover{
+background:#1d4ed8;
 }
 
 .footer{
-margin-top:40px;
-font-size:15px;
+margin-top:50px;
+text-align:center;
+color:#94a3b8;
+font-size:14px;
+}
+
+.back{
+display:inline-block;
+margin-top:30px;
+padding:10px 18px;
+background:#16a34a;
+border-radius:6px;
+color:white;
+text-decoration:none;
+}
+
+.back:hover{
+background:#15803d;
 }
 
 </style>
@@ -65,12 +111,13 @@ font-size:15px;
 
 function toggleContent(id){
 
-var x = document.getElementById(id);
+let x=document.getElementById(id)
 
-if(x.style.display==="none"){
-x.style.display="block";
-}else{
-x.style.display="none";
+if(x.style.display==="block"){
+x.style.display="none"
+}
+else{
+x.style.display="block"
 }
 
 }
@@ -83,41 +130,30 @@ x.style.display="none";
 
 <div class="container">
 
-<h1>أفضل مصادر تعلم Python Fundamentals</h1>
+<h1>Python Fundamentals</h1>
 
-<p>
-تعلم لغة Python هو أول خطوة في طريق تعلم الذكاء الاصطناعي.
-في هذه الصفحة ستجد أفضل المصادر من يوتيوب والكتب لتعلم أساسيات Python.
+<p class="subtitle">
+الخطوة الأولى في طريق تعلم الذكاء الاصطناعي
 </p>
 
 <!-- Elzero -->
 
 <div class="channel" onclick="toggleContent('c1')">
-
 <h2>📺 Elzero Web School</h2>
-
 </div>
 
 <div id="c1" class="content">
 
-<p>
-
 أفضل كورس عربي لتعلم Python من الصفر حتى مستوى متقدم.
+
+<br><br>
 
 الفيديوهات المقترحة:
 
-1 → 70
-
-</p>
+<b>1 → 70</b>
 
 <div class="links">
-
-<a href="https://www.youtube.com/@ElzeroWebSchool" target="_blank">
-
-اذهب إلى القناة
-
-</a>
-
+<a href="https://www.youtube.com/@ElzeroWebSchool" target="_blank">فتح القناة</a>
 </div>
 
 </div>
@@ -125,31 +161,21 @@ x.style.display="none";
 <!-- Programming Advices -->
 
 <div class="channel" onclick="toggleContent('c2')">
-
 <h2>📺 Programming Advices</h2>
-
 </div>
 
 <div id="c2" class="content">
 
-<p>
-
 كورس Python للمبتدئين مع شرح واضح وبسيط.
+
+<br><br>
 
 الفيديوهات المقترحة:
 
-1 → 35
-
-</p>
+<b>1 → 35</b>
 
 <div class="links">
-
-<a href="https://www.youtube.com/@ProgrammingAdvices" target="_blank">
-
-اذهب إلى القناة
-
-</a>
-
+<a href="https://www.youtube.com/@ProgrammingAdvices" target="_blank">فتح القناة</a>
 </div>
 
 </div>
@@ -157,31 +183,21 @@ x.style.display="none";
 <!-- Codezilla -->
 
 <div class="channel" onclick="toggleContent('c3')">
-
 <h2>📺 Codezilla</h2>
-
 </div>
 
 <div id="c3" class="content">
 
-<p>
-
 شرح مبسط وسريع لأساسيات Python مع أمثلة عملية.
+
+<br><br>
 
 الفيديوهات المقترحة:
 
-1 → 20
-
-</p>
+<b>1 → 20</b>
 
 <div class="links">
-
-<a href="https://www.youtube.com/@Codezilla" target="_blank">
-
-اذهب إلى القناة
-
-</a>
-
+<a href="https://www.youtube.com/@Codezilla" target="_blank">فتح القناة</a>
 </div>
 
 </div>
@@ -189,31 +205,21 @@ x.style.display="none";
 <!-- freecodecamp -->
 
 <div class="channel" onclick="toggleContent('c4')">
-
 <h2>🌍 freeCodeCamp Python Course</h2>
-
 </div>
 
 <div id="c4" class="content">
 
-<p>
-
 كورس Python كامل للمبتدئين باللغة الإنجليزية.
+
+<br><br>
 
 مدة الفيديو:
 
-4 ساعات
-
-</p>
+<b>4 ساعات</b>
 
 <div class="links">
-
-<a href="https://youtu.be/rfscVS0vtbw" target="_blank">
-
-مشاهدة الكورس
-
-</a>
-
+<a href="https://youtu.be/rfscVS0vtbw" target="_blank">مشاهدة الكورس</a>
 </div>
 
 </div>
@@ -221,31 +227,21 @@ x.style.display="none";
 <!-- Book 1 -->
 
 <div class="channel" onclick="toggleContent('c5')">
-
 <h2>📚 Python Crash Course</h2>
-
 </div>
 
 <div id="c5" class="content">
 
-<p>
-
 من أفضل الكتب لتعلم Python للمبتدئين.
+
+<br><br>
 
 الصفحات المقترحة:
 
-1 → 220
-
-</p>
+<b>1 → 220</b>
 
 <div class="links">
-
-<a href="https://nostarch.com/pythoncrashcourse2e" target="_blank">
-
-موقع الكتاب
-
-</a>
-
+<a href="https://nostarch.com/pythoncrashcourse2e" target="_blank">موقع الكتاب</a>
 </div>
 
 </div>
@@ -253,41 +249,29 @@ x.style.display="none";
 <!-- Book 2 -->
 
 <div class="channel" onclick="toggleContent('c6')">
-
 <h2>📚 Automate the Boring Stuff with Python</h2>
-
 </div>
 
 <div id="c6" class="content">
 
-<p>
-
 كتاب رائع لتعلم استخدام Python في حل المشاكل العملية.
+
+<br><br>
 
 الصفحات المقترحة:
 
-1 → 150
-
-</p>
+<b>1 → 150</b>
 
 <div class="links">
-
-<a href="https://automatetheboringstuff.com/" target="_blank">
-
-موقع الكتاب
-
-</a>
-
+<a href="https://automatetheboringstuff.com/" target="_blank">موقع الكتاب</a>
 </div>
 
 </div>
 
-<hr>
+<a class="back" href="index.html">⬅ العودة إلى Roadmap</a>
 
 <div class="footer">
-
 AI Engineer Roadmap
-
 </div>
 
 </div>
