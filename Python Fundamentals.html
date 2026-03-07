@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,63 +9,73 @@
 <style>
 
 body{
-font-family:Segoe UI, sans-serif;
-margin:0;
-background:linear-gradient(135deg,#0f172a,#1e293b);
+background-color: rgb(87,86,85);
+font-family: Arial, sans-serif;
+direction: rtl;
+text-align: center;
 color:white;
 }
 
 .container{
-width:90%;
 max-width:1000px;
-margin:auto;
-padding:40px 0;
-}
-
-h1{
-text-align:center;
-margin-bottom:10px;
-}
-
-.subtitle{
-text-align:center;
-color:#cbd5e1;
-margin-bottom:40px;
-}
-
-.section{
-background:white;
-color:black;
-padding:25px;
+margin:0 auto;
+padding:20px;
+background-color: rgba(54,46,46,0.2);
 border-radius:10px;
-margin-bottom:25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-.section h2{
-margin-top:0;
-color:#0f172a;
+.channel{
+margin:20px 0;
+padding:15px;
+background-color: rgba(165,160,160,0.45);
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
 }
 
-.resource{
-margin-bottom:15px;
-padding:10px;
-border-left:4px solid #2563eb;
-background:#f1f5f9;
+.channel:hover{
+background-color: rgba(167,196,159,0.4);
 }
 
-.book{
-border-left:4px solid #16a34a;
+.content{
+display:none;
+margin-top:10px;
+font-size:0.95em;
+}
+
+.links{
+margin-top:20px;
+}
+
+.links a{
+color:red;
+text-decoration:none;
+margin-right:10px;
+font-size:18px;
 }
 
 .footer{
-text-align:center;
 margin-top:40px;
-font-size:14px;
-color:#94a3b8;
+font-size:15px;
 }
 
 </style>
+
+<script>
+
+function toggleContent(id){
+
+var x = document.getElementById(id);
+
+if(x.style.display==="none"){
+x.style.display="block";
+}else{
+x.style.display="none";
+}
+
+}
+
+</script>
 
 </head>
 
@@ -73,87 +83,211 @@ color:#94a3b8;
 
 <div class="container">
 
-<h1>Python Fundamentals</h1>
-<p class="subtitle">
-Learn the basics of Python programming — the first step to becoming an AI Engineer.
+<h1>أفضل مصادر تعلم Python Fundamentals</h1>
+
+<p>
+تعلم لغة Python هو أول خطوة في طريق تعلم الذكاء الاصطناعي.
+في هذه الصفحة ستجد أفضل المصادر من يوتيوب والكتب لتعلم أساسيات Python.
 </p>
 
-<div class="section">
+<!-- Elzero -->
 
-<h2>📺 Arabic YouTube Resources</h2>
+<div class="channel" onclick="toggleContent('c1')">
 
-<div class="resource">
-<b>Elzero Web School</b><br>
-Recommended Videos: 1 → 70<br>
-Covers variables, loops, functions, lists, dictionaries and basic OOP.
-</div>
-
-<div class="resource">
-<b>Programming Advices</b><br>
-Recommended Videos: 1 → 35<br>
-Focus on syntax, conditions, loops and problem solving.
-</div>
-
-<div class="resource">
-<b>Codezilla Python Course</b><br>
-Recommended Videos: 1 → 20<br>
-Short beginner friendly explanations with examples.
-</div>
+<h2>📺 Elzero Web School</h2>
 
 </div>
 
+<div id="c1" class="content">
 
-<div class="section">
+<p>
 
-<h2>🌍 English YouTube Resources</h2>
+أفضل كورس عربي لتعلم Python من الصفر حتى مستوى متقدم.
 
-<div class="resource">
-<b>freeCodeCamp Python Full Course</b><br>
-Duration: 4 Hours<br>
-A complete beginner guide covering Python fundamentals and basic projects.
-</div>
+الفيديوهات المقترحة:
 
-<div class="resource">
-<b>Programming with Mosh</b><br>
-Watch: Python Tutorial for Beginners + Python Intermediate<br>
-Great explanations of Python concepts and structure.
-</div>
+1 → 70
 
-<div class="resource">
-<b>Corey Schafer</b><br>
-Recommended Videos: 1 → 15<br>
-Deep understanding of Python syntax, modules and classes.
+</p>
+
+<div class="links">
+
+<a href="https://www.youtube.com/@ElzeroWebSchool" target="_blank">
+
+اذهب إلى القناة
+
+</a>
+
 </div>
 
 </div>
 
+<!-- Programming Advices -->
 
-<div class="section">
+<div class="channel" onclick="toggleContent('c2')">
 
-<h2>📚 Recommended Books</h2>
-
-<div class="resource book">
-<b>Python Crash Course – Eric Matthes</b><br>
-Read Pages: 1 → 220<br>
-One of the best beginner books to learn Python quickly.
-</div>
-
-<div class="resource book">
-<b>Automate the Boring Stuff with Python</b><br>
-Read Pages: 1 → 150<br>
-Learn how to automate real tasks using Python.
-</div>
-
-<div class="resource book">
-<b>Think Python – Allen B. Downey</b><br>
-Read Pages: 1 → 180<br>
-Teaches programming thinking and problem solving.
-</div>
+<h2>📺 Programming Advices</h2>
 
 </div>
+
+<div id="c2" class="content">
+
+<p>
+
+كورس Python للمبتدئين مع شرح واضح وبسيط.
+
+الفيديوهات المقترحة:
+
+1 → 35
+
+</p>
+
+<div class="links">
+
+<a href="https://www.youtube.com/@ProgrammingAdvices" target="_blank">
+
+اذهب إلى القناة
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Codezilla -->
+
+<div class="channel" onclick="toggleContent('c3')">
+
+<h2>📺 Codezilla</h2>
+
+</div>
+
+<div id="c3" class="content">
+
+<p>
+
+شرح مبسط وسريع لأساسيات Python مع أمثلة عملية.
+
+الفيديوهات المقترحة:
+
+1 → 20
+
+</p>
+
+<div class="links">
+
+<a href="https://www.youtube.com/@Codezilla" target="_blank">
+
+اذهب إلى القناة
+
+</a>
+
+</div>
+
+</div>
+
+<!-- freecodecamp -->
+
+<div class="channel" onclick="toggleContent('c4')">
+
+<h2>🌍 freeCodeCamp Python Course</h2>
+
+</div>
+
+<div id="c4" class="content">
+
+<p>
+
+كورس Python كامل للمبتدئين باللغة الإنجليزية.
+
+مدة الفيديو:
+
+4 ساعات
+
+</p>
+
+<div class="links">
+
+<a href="https://youtu.be/rfscVS0vtbw" target="_blank">
+
+مشاهدة الكورس
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Book 1 -->
+
+<div class="channel" onclick="toggleContent('c5')">
+
+<h2>📚 Python Crash Course</h2>
+
+</div>
+
+<div id="c5" class="content">
+
+<p>
+
+من أفضل الكتب لتعلم Python للمبتدئين.
+
+الصفحات المقترحة:
+
+1 → 220
+
+</p>
+
+<div class="links">
+
+<a href="https://nostarch.com/pythoncrashcourse2e" target="_blank">
+
+موقع الكتاب
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Book 2 -->
+
+<div class="channel" onclick="toggleContent('c6')">
+
+<h2>📚 Automate the Boring Stuff with Python</h2>
+
+</div>
+
+<div id="c6" class="content">
+
+<p>
+
+كتاب رائع لتعلم استخدام Python في حل المشاكل العملية.
+
+الصفحات المقترحة:
+
+1 → 150
+
+</p>
+
+<div class="links">
+
+<a href="https://automatetheboringstuff.com/" target="_blank">
+
+موقع الكتاب
+
+</a>
+
+</div>
+
+</div>
+
+<hr>
 
 <div class="footer">
+
 AI Engineer Roadmap
+
 </div>
 
 </div>
