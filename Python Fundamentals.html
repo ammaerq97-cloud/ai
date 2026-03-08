@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -7,439 +8,188 @@
 
 <style>
 :root{
-    --bg1:#0f172a;
-    --bg2:#1e293b;
-    --card:#1f2937;
-    --card-hover:#2b3a4f;
-    --inner:#111827;
-    --text:#f8fafc;
-    --muted:#cbd5e1;
-    --accent:#3b82f6;
-    --accent-hover:#2563eb;
-    --green:#22c55e;
-    --green-hover:#16a34a;
-    --shadow:0 10px 30px rgba(0,0,0,0.25);
-    --radius:16px;
-}
-
-*{
-    box-sizing:border-box;
+--bg1:#0f172a;
+--bg2:#1e293b;
+--card:#1f2937;
+--card-hover:#2b3a4f;
+--text:#f8fafc;
+--muted:#cbd5e1;
+--accent:#3b82f6;
+--accent-hover:#2563eb;
+--green:#22c55e;
+--shadow:0 10px 30px rgba(0,0,0,0.25);
+--radius:14px;
 }
 
 body{
-    margin:0;
-    font-family:"Segoe UI", Tahoma, Arial, sans-serif;
-    direction:rtl;
-    background:linear-gradient(135deg,var(--bg1),var(--bg2));
-    color:var(--text);
-    min-height:100vh;
+margin:0;
+font-family:Segoe UI,Arial;
+direction:rtl;
+background:linear-gradient(135deg,var(--bg1),var(--bg2));
+color:var(--text);
+}
+
+.navbar{
+background:#020617;
+padding:15px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+font-size:14px;
 }
 
 .container{
-    width:min(1000px, 92%);
-    margin:auto;
-    padding:40px 0 50px;
+max-width:1000px;
+margin:auto;
+padding:30px 20px;
 }
 
-.hero{
-    text-align:center;
-    margin-bottom:30px;
+.search{
+margin:20px 0;
+text-align:center;
 }
 
-.hero h1{
-    margin:0 0 10px;
-    font-size:clamp(28px, 4vw, 42px);
-    font-weight:700;
-    letter-spacing:.3px;
+.search input{
+width:80%;
+max-width:500px;
+padding:10px;
+border-radius:8px;
+border:none;
+font-size:15px;
 }
 
-.subtitle{
-    margin:0 auto;
-    max-width:700px;
-    color:var(--muted);
-    line-height:1.9;
-    font-size:16px;
+.card{
+background:var(--card);
+border-radius:var(--radius);
+margin:15px 0;
+padding:18px;
+box-shadow:var(--shadow);
+transition:0.25s;
 }
 
-.top-bar{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin:22px 0 35px;
+.card:hover{
+background:var(--card-hover);
+transform:translateY(-2px);
 }
 
-.badge{
-    background:rgba(255,255,255,0.08);
-    color:#e2e8f0;
-    padding:10px 16px;
-    border-radius:999px;
-    font-size:14px;
-    border:1px solid rgba(255,255,255,0.08);
-    backdrop-filter:blur(4px);
+.card h3{
+margin:0;
+display:flex;
+align-items:center;
+gap:8px;
 }
 
-.channel{
-    background:rgba(31,41,55,0.92);
-    border:1px solid rgba(255,255,255,0.07);
-    border-radius:var(--radius);
-    margin:16px 0;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    transition:transform .25s ease, background .25s ease, border-color .25s ease;
+.links a{
+display:inline-block;
+margin-top:10px;
+padding:8px 14px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:13px;
 }
 
-.channel:hover{
-    transform:translateY(-2px);
-    background:var(--card-hover);
-    border-color:rgba(59,130,246,0.35);
+.links a:hover{
+background:var(--accent-hover);
 }
 
-.channel-header{
-    padding:20px 22px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-}
-
-.channel-title{
-    margin:0;
-    font-size:20px;
-    font-weight:700;
-    color:#f8fafc;
-}
-
-.channel-icon{
-    font-size:22px;
-    flex-shrink:0;
-}
-
-.toggle{
-    font-size:22px;
-    color:#93c5fd;
-    transition:transform .25s ease;
-}
-
-.channel.active .toggle{
-    transform:rotate(180deg);
-}
-
-.content{
-    display:none;
-    padding:0 22px 22px;
-    animation:fadeIn .25s ease;
-}
-
-.channel.active .content{
-    display:block;
-}
-
-.content-box{
-    background:rgba(17,24,39,0.95);
-    border:1px solid rgba(255,255,255,0.06);
-    border-radius:14px;
-    padding:18px;
-    line-height:2;
-    color:#e5e7eb;
-    text-align:right;
-}
-
-.meta{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:12px;
-    margin-top:16px;
-}
-
-.meta-card{
-    background:rgba(255,255,255,0.04);
-    border:1px solid rgba(255,255,255,0.06);
-    border-radius:12px;
-    padding:14px;
-}
-
-.meta-card b{
-    display:block;
-    margin-bottom:6px;
-    color:#bfdbfe;
-}
-
-.links{
-    margin-top:18px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.links a,
-.back{
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-    background:var(--accent);
-    padding:10px 16px;
-    border-radius:10px;
-    transition:background .25s ease, transform .25s ease;
-    font-size:14px;
-    font-weight:600;
-}
-
-.links a:hover,
-.back:hover{
-    background:var(--accent-hover);
-    transform:translateY(-1px);
-}
-
-.back{
-    background:var(--green);
-    margin-top:28px;
-}
-
-.back:hover{
-    background:var(--green-hover);
+.progress{
+margin:30px 0;
+background:#020617;
+padding:15px;
+border-radius:10px;
 }
 
 .footer{
-    text-align:center;
-    color:#94a3b8;
-    margin-top:28px;
-    font-size:14px;
+text-align:center;
+color:#94a3b8;
+margin-top:30px;
+font-size:13px;
 }
 
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(-4px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
-@media (max-width:640px){
-    .channel-header{
-        padding:18px 16px;
-    }
-
-    .content{
-        padding:0 16px 16px;
-    }
-
-    .channel-title{
-        font-size:18px;
-    }
-
-    .subtitle{
-        font-size:15px;
-    }
-}
 </style>
 
 <script>
-function toggleContent(id, element){
-    const content = document.getElementById(id);
-    const parent = element.closest(".channel");
 
-    if(content.style.display === "block"){
-        content.style.display = "none";
-        parent.classList.remove("active");
-    } else {
-        content.style.display = "block";
-        parent.classList.add("active");
-    }
+function searchCards() {
+let input=document.getElementById("search").value.toLowerCase()
+let cards=document.querySelectorAll(".card")
+
+cards.forEach(card=>{
+let text=card.innerText.toLowerCase()
+card.style.display=text.includes(input) ? "block" : "none"
+})
 }
+
+function toggleProgress(id){
+localStorage.setItem(id,document.getElementById(id).checked)
+}
+
+window.onload=function(){
+document.querySelectorAll("input[type=checkbox]").forEach(cb=>{
+let val=localStorage.getItem(cb.id)
+if(val==="true") cb.checked=true
+})
+}
+
 </script>
+
 </head>
 
 <body>
 
-<div class="container">
-
-    <div class="hero">
-        <h1>Python Fundamentals</h1>
-        <p class="subtitle">
-            هذه الصفحة تجمع لك أفضل المصادر لتعلّم أساسيات لغة Python، وهي أول خطوة حقيقية في طريقك لتصبح AI Engineer.
-        </p>
-    </div>
-
-    <div class="top-bar">
-        <div class="badge">بداية مناسبة للمبتدئين</div>
-        <div class="badge">مصادر عربية + إنجليزية</div>
-        <div class="badge">كتب + فيديوهات</div>
-    </div>
-
-    <div class="channel">
-        <div class="channel-header" onclick="toggleContent('c1', this)">
-            <span class="toggle">⌄</span>
-            <h2 class="channel-title">📺 Elzero Web School</h2>
-            <span class="channel-icon">🐍</span>
-        </div>
-        <div id="c1" class="content">
-            <div class="content-box">
-                من أقوى المصادر العربية لتعلّم Python من الصفر. الشرح واضح جدًا ومناسب للمبتدئين، ويغطي الأساسيات بشكل مرتب ومتدرج.
-
-                <div class="meta">
-                    <div class="meta-card">
-                        <b>الفيديوهات المقترحة</b>
-                        1 → 70
-                    </div>
-                    <div class="meta-card">
-                        <b>يغطي</b>
-                        Variables, Loops, Functions, Lists, Dictionaries, OOP Basics
-                    </div>
-                </div>
-
-                <div class="links">
-                    <a href="https://www.youtube.com/@ElzeroWebSchool" target="_blank">فتح القناة</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="channel">
-        <div class="channel-header" onclick="toggleContent('c2', this)">
-            <span class="toggle">⌄</span>
-            <h2 class="channel-title">📺 Programming Advices</h2>
-            <span class="channel-icon">💡</span>
-        </div>
-        <div id="c2" class="content">
-            <div class="content-box">
-                مصدر ممتاز لتعلم Python بأسلوب واضح ومنظم، ويفيد جدًا في فهم الأساسيات وحل المسائل للمبتدئين.
-
-                <div class="meta">
-                    <div class="meta-card">
-                        <b>الفيديوهات المقترحة</b>
-                        1 → 35
-                    </div>
-                    <div class="meta-card">
-                        <b>يغطي</b>
-                        Syntax, Conditions, Loops, Functions, Basic Problem Solving
-                    </div>
-                </div>
-
-                <div class="links">
-                    <a href="https://www.youtube.com/@ProgrammingAdvices" target="_blank">فتح القناة</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="channel">
-        <div class="channel-header" onclick="toggleContent('c3', this)">
-            <span class="toggle">⌄</span>
-            <h2 class="channel-title">📺 Codezilla</h2>
-            <span class="channel-icon">⚙️</span>
-        </div>
-        <div id="c3" class="content">
-            <div class="content-box">
-                مناسب جدًا إذا أردت شرح سريع ومرتب لأساسيات Python مع أمثلة بسيطة وسهلة الفهم.
-
-                <div class="meta">
-                    <div class="meta-card">
-                        <b>الفيديوهات المقترحة</b>
-                        1 → 20
-                    </div>
-                    <div class="meta-card">
-                        <b>يغطي</b>
-                        Basics, Variables, Conditions, Loops, Functions
-                    </div>
-                </div>
-
-                <div class="links">
-                    <a href="https://www.youtube.com/@Codezilla" target="_blank">فتح القناة</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="channel">
-        <div class="channel-header" onclick="toggleContent('c4', this)">
-            <span class="toggle">⌄</span>
-            <h2 class="channel-title">🌍 freeCodeCamp Python Course</h2>
-            <span class="channel-icon">🎥</span>
-        </div>
-        <div id="c4" class="content">
-            <div class="content-box">
-                كورس إنجليزي شهير جدًا للمبتدئين. ممتاز إذا تريد مصدر واحد طويل ومرتب يغطي الأساسيات بشكل قوي.
-
-                <div class="meta">
-                    <div class="meta-card">
-                        <b>المدة</b>
-                        4 ساعات تقريبًا
-                    </div>
-                    <div class="meta-card">
-                        <b>يغطي</b>
-                        Full Python Basics, Functions, Lists, Dictionaries, Small Exercises
-                    </div>
-                </div>
-
-                <div class="links">
-                    <a href="https://youtu.be/rfscVS0vtbw" target="_blank">مشاهدة الكورس</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="channel">
-        <div class="channel-header" onclick="toggleContent('c5', this)">
-            <span class="toggle">⌄</span>
-            <h2 class="channel-title">📚 Python Crash Course</h2>
-            <span class="channel-icon">📘</span>
-        </div>
-        <div id="c5" class="content">
-            <div class="content-box">
-                واحد من أفضل الكتب للمبتدئين في Python، ويمتاز بشرح تدريجي مع تطبيقات عملية واضحة.
-
-                <div class="meta">
-                    <div class="meta-card">
-                        <b>الصفحات المقترحة</b>
-                        1 → 220
-                    </div>
-                    <div class="meta-card">
-                        <b>يفيدك في</b>
-                        تأسيس قوي وسريع في اللغة
-                    </div>
-                </div>
-
-                <div class="links">
-                    <a href="https://nostarch.com/pythoncrashcourse2e" target="_blank">موقع الكتاب</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="channel">
-        <div class="channel-header" onclick="toggleContent('c6', this)">
-            <span class="toggle">⌄</span>
-            <h2 class="channel-title">📚 Automate the Boring Stuff with Python</h2>
-            <span class="channel-icon">🛠️</span>
-        </div>
-        <div id="c6" class="content">
-            <div class="content-box">
-                كتاب ممتاز جدًا إذا أردت الانتقال من التعلم النظري إلى استخدام Python في المهام العملية والأتمتة.
-
-                <div class="meta">
-                    <div class="meta-card">
-                        <b>الصفحات المقترحة</b>
-                        1 → 150
-                    </div>
-                    <div class="meta-card">
-                        <b>يفيدك في</b>
-                        Automation, Practical Scripts, Real Use Cases
-                    </div>
-                </div>
-
-                <div class="links">
-                    <a href="https://automatetheboringstuff.com/" target="_blank">موقع الكتاب</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <a class="back" href="index.html">⬅ العودة إلى Roadmap</a>
-
-    <div class="footer">
-        AI Engineer Roadmap
-    </div>
-
+<div class="navbar">
+<div>AI Roadmap</div>
+<div>
+<a href="Python Fundamentals.html">Python</a>
+<a href="Data Structures.html">Data Structures</a>
+<a href="OOP Concepts.html">OOP</a>
+<a href="Git and GitHub.html">Git</a>
+</div>
 </div>
 
+<div class="container">
+
+<h1>Python Fundamentals</h1>
+
+<div class="search">
+<input id="search" onkeyup="searchCards()" placeholder="ابحث داخل الصفحة...">
+</div>
+
+<div class="progress">
+<b>Progress Tracker</b><br>
+<label><input type="checkbox" id="p1" onclick="toggleProgress('p1')"> بدأت التعلم</label><br>
+<label><input type="checkbox" id="p2" onclick="toggleProgress('p2')"> أنهيت الفيديوهات</label><br>
+<label><input type="checkbox" id="p3" onclick="toggleProgress('p3')"> أنهيت التمارين</label>
+</div>
+
+
+<div class="card">
+<h3>🐍 Elzero Python Course</h3>
+<div class="links"><a href="https://www.youtube.com/@ElzeroWebSchool" target="_blank">فتح القناة</a></div>
+</div>
+
+<div class="card">
+<h3>🎥 freeCodeCamp Python</h3>
+<div class="links"><a href="https://youtu.be/rfscVS0vtbw" target="_blank">مشاهدة الكورس</a></div>
+</div>
+
+
+<div class="footer">
+AI Engineer Roadmap
+</div>
+
+</div>
 </body>
 </html>
