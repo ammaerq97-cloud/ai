@@ -1,548 +1,379 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OOP Concepts</title>
+
 <style>
+
 :root{
-  --bg:#0b1220;
-  --bg-soft:#111b30;
-  --panel:#14213a;
-  --panel-2:#0f1a2d;
-  --card:#182742;
-  --card-hover:#22365b;
-  --text:#eef4ff;
-  --muted:#b8c7e0;
-  --line:rgba(255,255,255,.08);
-  --accent:#60a5fa;
-  --accent-2:#38bdf8;
-  --green:#22c55e;
-  --yellow:#f59e0b;
-  --shadow:0 12px 30px rgba(0,0,0,.28);
-  --radius:18px;
+--bg1:#0f172a;
+--bg2:#1e293b;
+--card:#1f2937;
+--card-hover:#2b3a4f;
+--inner:#111827;
+--text:#f8fafc;
+--muted:#cbd5e1;
+--accent:#3b82f6;
+--accent-hover:#2563eb;
+--green:#22c55e;
+--green-hover:#16a34a;
+--shadow:0 10px 30px rgba(0,0,0,0.25);
+--radius:16px;
 }
-body.light{
-  --bg:#eef4fb;
-  --bg-soft:#dfe9f8;
-  --panel:#ffffff;
-  --panel-2:#f8fbff;
-  --card:#ffffff;
-  --card-hover:#f1f6ff;
-  --text:#0f172a;
-  --muted:#475569;
-  --line:rgba(15,23,42,.08);
-  --accent:#2563eb;
-  --accent-2:#0284c7;
-  --green:#16a34a;
-  --yellow:#d97706;
-  --shadow:0 10px 24px rgba(15,23,42,.08);
+
+*{
+box-sizing:border-box;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
 body{
-  margin:0;
-  font-family:"Segoe UI",Tahoma,Arial,sans-serif;
-  direction:rtl;
-  background:linear-gradient(135deg,var(--bg),var(--bg-soft));
-  color:var(--text);
-  min-height:100vh;
+margin:0;
+font-family:"Segoe UI",Tahoma,Arial,sans-serif;
+direction:rtl;
+background:linear-gradient(135deg,var(--bg1),var(--bg2));
+color:var(--text);
+min-height:100vh;
 }
-a{color:inherit}
 .navbar{
-  position:sticky; top:0; z-index:100;
-  backdrop-filter:blur(10px);
-  background:color-mix(in srgb, var(--panel) 85%, transparent);
-  border-bottom:1px solid var(--line);
+  background:#020617;
+  padding:15px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-.nav-inner{
-  width:min(1180px,94%);
-  margin:auto;
-  padding:14px 0;
-  display:flex; align-items:center; gap:16px; justify-content:space-between;
-}
-.brand{
-  font-weight:800; letter-spacing:.2px; font-size:20px;
-  display:flex; align-items:center; gap:10px;
-}
-.brand-badge{
-  width:38px;height:38px;border-radius:12px;
-  display:grid;place-items:center;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  box-shadow:var(--shadow);
-}
-.nav-links{
-  display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-}
-.nav-links a{
+.navbar a{
+  color:white;
   text-decoration:none;
-  padding:9px 14px;
-  border-radius:999px;
-  color:var(--muted);
-  background:transparent;
-  transition:.2s ease;
+  margin-left:12px;
   font-size:14px;
-  border:1px solid transparent;
 }
-.nav-links a:hover, .nav-links a.active{
-  color:var(--text);
-  background:var(--card);
-  border-color:var(--line);
-}
-.top-actions{
-  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-}
-.icon-btn, .primary-btn, .ghost-btn{
-  border:none; cursor:pointer; text-decoration:none;
-  padding:10px 14px; border-radius:12px; font-size:14px;
-  transition:.2s ease; display:inline-flex; align-items:center; gap:8px;
-}
-.icon-btn{background:var(--card); color:var(--text); border:1px solid var(--line)}
-.icon-btn:hover{background:var(--card-hover)}
-.primary-btn{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#fff}
-.primary-btn:hover{filter:brightness(1.05)}
-.ghost-btn{background:transparent;color:var(--text); border:1px solid var(--line)}
-.ghost-btn:hover{background:var(--card)}
+
 .container{
-  width:min(1100px,94%);
-  margin:auto;
-  padding:34px 0 56px;
+width:min(1000px,92%);
+margin:auto;
+padding:40px 0 50px;
 }
+
 .hero{
-  background:
-    radial-gradient(circle at top right, rgba(96,165,250,.22), transparent 28%),
-    radial-gradient(circle at top left, rgba(56,189,248,.14), transparent 22%),
-    linear-gradient(180deg, color-mix(in srgb,var(--panel) 92%, transparent), color-mix(in srgb,var(--panel-2) 98%, transparent));
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  border-radius:24px;
-  padding:28px;
+text-align:center;
+margin-bottom:30px;
 }
-.hero h1{margin:0 0 10px; font-size:clamp(28px,4vw,44px)}
+
+.hero h1{
+margin:0 0 10px;
+font-size:clamp(28px,4vw,42px);
+font-weight:700;
+}
+
 .subtitle{
-  color:var(--muted); line-height:1.95; margin:0;
-  max-width:900px;
+margin:0 auto;
+max-width:700px;
+color:var(--muted);
+line-height:1.9;
+font-size:16px;
 }
-.hero-grid{
-  display:grid; grid-template-columns:1.3fr .9fr; gap:18px; margin-top:22px;
+
+.channel{
+background:rgba(31,41,55,0.92);
+border:1px solid rgba(255,255,255,0.07);
+border-radius:var(--radius);
+margin:16px 0;
+overflow:hidden;
+box-shadow:var(--shadow);
+transition:0.25s;
 }
-.mini-card, .panel, .resource-card, .topic-card, .roadmap-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:20px;
-  box-shadow:var(--shadow);
+
+.channel:hover{
+transform:translateY(-2px);
+background:var(--card-hover);
 }
-.mini-card{padding:18px}
-.stat{
-  display:flex; align-items:center; justify-content:space-between;
-  margin-bottom:12px; color:var(--muted)
+
+.channel-header{
+padding:20px 22px;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
-.progress-wrap{display:flex; flex-direction:column; gap:10px}
-.progress-bar{
-  width:100%; height:12px; background:rgba(255,255,255,.08); border-radius:999px; overflow:hidden;
+
+.channel-title{
+margin:0;
+font-size:20px;
 }
-body.light .progress-bar{background:rgba(15,23,42,.08)}
-.progress-fill{
-  height:100%;
-  background:linear-gradient(135deg,var(--green),#34d399);
-  width:0%;
-  transition:width .3s ease;
+
+.toggle{
+font-size:22px;
+color:#93c5fd;
 }
-.progress-meta{
-  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:14px
+
+.content{
+display:none;
+padding:0 22px 22px;
 }
-.toolbar{
-  display:grid; grid-template-columns:1fr auto; gap:14px; margin:20px 0;
+
+.content-box{
+background:rgba(17,24,39,0.95);
+border-radius:14px;
+padding:18px;
+line-height:2;
 }
-.search-box{
-  position:relative;
+
+.meta{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:12px;
+margin-top:16px;
 }
-.search-box input{
-  width:100%; border:none; outline:none;
-  background:var(--panel);
-  color:var(--text);
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-  padding:16px 18px 16px 52px;
-  border-radius:16px; font-size:15px;
+
+.meta-card{
+background:rgba(255,255,255,0.04);
+border-radius:12px;
+padding:14px;
 }
-.search-box span{
-  position:absolute; left:16px; top:50%; transform:translateY(-50%);
-  color:var(--muted)
+
+.meta-card b{
+display:block;
+margin-bottom:6px;
+color:#bfdbfe;
 }
-.panel{padding:18px}
-.section-title{
-  display:flex; align-items:center; justify-content:space-between; gap:12px;
-  margin-bottom:14px;
+
+.links{
+margin-top:18px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
-.section-title h2{margin:0; font-size:24px}
-.section-title p{margin:4px 0 0; color:var(--muted)}
-.chips{display:flex; gap:8px; flex-wrap:wrap}
-.chip{
-  padding:7px 12px;
-  border-radius:999px;
-  background:rgba(96,165,250,.14);
-  color:var(--text);
-  font-size:13px;
-  border:1px solid var(--line);
+
+.links a,.back{
+display:inline-block;
+text-decoration:none;
+color:white;
+background:var(--accent);
+padding:10px 16px;
+border-radius:10px;
+transition:0.25s;
+font-size:14px;
 }
-.accordion{
-  display:flex; flex-direction:column; gap:14px;
+
+.links a:hover,.back:hover{
+background:var(--accent-hover);
 }
-.resource-card{
-  overflow:hidden;
-  transition:.2s ease;
+
+.back{
+background:var(--green);
+margin-top:28px;
 }
-.resource-card:hover{transform:translateY(-2px)}
-.resource-head{
-  cursor:pointer;
-  padding:18px 20px;
-  display:flex; align-items:center; justify-content:space-between; gap:14px;
+
+.footer{
+text-align:center;
+color:#94a3b8;
+margin-top:28px;
+font-size:14px;
 }
-.resource-title{
-  display:flex; align-items:center; gap:14px;
-}
-.res-icon{
-  width:48px; height:48px; border-radius:14px;
-  display:grid; place-items:center; font-size:24px;
-  background:linear-gradient(135deg, rgba(96,165,250,.2), rgba(56,189,248,.18));
-  border:1px solid var(--line);
-}
-.resource-head h3{margin:0 0 5px; font-size:20px}
-.resource-head p{margin:0; color:var(--muted); font-size:14px}
-.arrow{font-size:24px; color:var(--muted); transition:.2s ease}
-.resource-card.open .arrow{transform:rotate(180deg); color:var(--text)}
-.resource-body{
-  display:none;
-  padding:0 20px 20px;
-}
-.resource-card.open .resource-body{display:block}
-.resource-inner{
-  border-top:1px solid var(--line);
-  padding-top:18px;
-  color:var(--text);
-  line-height:1.95;
-}
-.meta-grid{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:14px;
-}
-.meta-item, .topic-card{
-  background:var(--panel-2);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:14px;
-}
-.meta-item b{
-  display:block; color:var(--accent); margin-bottom:6px
-}
-.links-row{
-  display:flex; flex-wrap:wrap; gap:10px; margin-top:16px;
-}
-.topics-grid, .roadmap-grid{
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;
-}
-.topic-card h4, .roadmap-card h4{margin:0 0 8px}
-.topic-card p, .roadmap-card p{margin:0; color:var(--muted); line-height:1.8}
-.roadmap-card{
-  padding:18px; text-decoration:none; display:block;
-  transition:.2s ease;
-}
-.roadmap-card:hover{transform:translateY(-2px); background:var(--card-hover)}
-.roadmap-badge{
-  display:inline-flex; align-items:center; gap:8px;
-  font-size:12px; color:var(--text);
-  background:rgba(34,197,94,.15);
-  border:1px solid rgba(34,197,94,.25);
-  padding:7px 10px; border-radius:999px; margin-bottom:10px;
-}
-.stage-actions{
-  display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;
-}
-.check-list{
-  display:flex; gap:10px; flex-wrap:wrap;
-}
-.check-pill{
-  display:flex; align-items:center; gap:8px;
-  background:var(--panel-2);
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:10px 12px;
-  font-size:14px;
-}
-.check-pill input{accent-color:var(--green); width:16px; height:16px}
-.notice{
-  color:var(--muted); font-size:14px; line-height:1.8; margin-top:12px
-}
-footer{
-  margin-top:28px; color:var(--muted); text-align:center; padding:16px 0;
-}
-@media (max-width:900px){
-  .hero-grid, .toolbar, .topics-grid, .roadmap-grid{grid-template-columns:1fr}
-  .nav-inner{flex-direction:column; align-items:stretch}
-  .nav-links, .top-actions{justify-content:center}
-}
+
 </style>
+
+<script>
+
+function toggleContent(id){
+
+const content=document.getElementById(id)
+
+if(content.style.display==="block"){
+content.style.display="none"
+}else{
+content.style.display="block"
+}
+
+}
+
+</script>
+
 </head>
+
 <body>
-<nav class="navbar">
-  <div class="nav-inner">
-    <div class="brand">
-      <div class="brand-badge">🧠</div>
-      <div>AI Engineer Roadmap</div>
-    </div>
-    <div class="nav-links">
-      <a href="index.html" data-page="index.html">Roadmap</a>
-      <a href="Python Fundamentals.html" data-page="Python Fundamentals.html">Python</a>
-      <a href="Data Structures.html" data-page="Data Structures.html">Data Structures</a>
-      <a href="OOP Concepts.html" data-page="OOP Concepts.html">OOP</a>
-      <a href="Git and GitHub.html" data-page="Git and GitHub.html">Git & GitHub</a>
-    </div>
-    <div class="top-actions">
-      <button class="icon-btn" onclick="toggleTheme()">🌓 <span id="themeLabel">Light Mode</span></button>
-      <a class="ghost-btn" href="index.html">⬅ العودة للـ Roadmap</a>
-    </div>
-  </div>
-</nav>
-
+<div class="navbar">
+<div>AI Roadmap</div>
+<div>
+<a href="index.html">Roadmap</a>
+<a href="Python Fundamentals.html">Python</a>
+<a href="Data Structures.html">Data Structures</a>
+<a href="OOP Concepts.html">OOP</a>
+<a href="Git and GitHub.html">Git</a>
+</div>
+</div>
 <div class="container">
-  <section class="hero">
-    <h1>OOP Concepts</h1>
-    <p class="subtitle">البرمجة الكائنية من أهم المهارات التي تساعدك في تنظيم الكود وبناء مشاريع قابلة للتوسع. هنا كل المصادر التي اتفقنا عليها سابقًا مع واجهة أفضل.</p>
-    <div class="hero-grid">
-      <div class="mini-card">
-        <div class="section-title">
-          <div>
-            <h2>المحتوى الذي ستجده</h2>
-            <p>كل المصادر السابقة محفوظة ومضافة مع تنظيم أفضل وتحسينات جديدة.</p>
-          </div>
-        </div>
-        <div class="chips"><span class="chip">Class &amp; Object</span><span class="chip">Encapsulation</span><span class="chip">Inheritance</span><span class="chip">Polymorphism</span></div>
-        <div class="topics-grid" style="margin-top:16px"><div class="topic-card"><h4>المطلوب فهمه</h4><p>Class, Object, Methods, Attributes, Constructors, Encapsulation, Inheritance, Polymorphism.</p></div><div class="topic-card"><h4>علامة الإتقان</h4><p>أن تستطيع بناء كلاس بسيط واستدعاء object وتطبيق الوراثة بشكل صحيح.</p></div></div>
-      </div>
-      <div class="mini-card">
-        <div class="section-title">
-          <div>
-            <h2>تقدم هذه المرحلة</h2>
-            <p>Progress tracker موحد ومربوط مع الموقع كله.</p>
-          </div>
-        </div>
-        <div class="progress-wrap">
-          <div class="check-list">
-            <label class="check-pill"><input id="started" type="checkbox" onchange="updateStageProgress()"> بدأت التعلم</label>
-            <label class="check-pill"><input id="videos" type="checkbox" onchange="updateStageProgress()"> أنهيت الفيديوهات</label>
-            <label class="check-pill"><input id="exercises" type="checkbox" onchange="updateStageProgress()"> أنهيت التمارين</label>
-          </div>
-          <div class="progress-bar"><div id="pageProgressFill" class="progress-fill"></div></div>
-          <div class="progress-meta">
-            <span>تقدم الصفحة: <b id="pagePercent">0%</b></span>
-            <span>التقدم الكلي بالموقع: <b id="overallPercent">0%</b></span>
-          </div>
-          <div class="notice">تم حذف الصندوق الكبير المزعج الخاص بالتتبع، واستبداله بتتبع مدمج وأخف بصريًا داخل الهيدر.</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <div class="toolbar">
-    <div class="search-box">
-      <input id="searchInput" type="text" placeholder="ابحث داخل المصادر والشرح..." oninput="filterCards()">
-      <span>🔎</span>
-    </div>
-    <a class="primary-btn" href="index.html">افتح الخريطة الرئيسية</a>
-  </div>
+<div class="hero">
 
-  <section class="panel">
-    <div class="section-title">
-      <div>
-        <h2>المصادر المقترحة</h2>
-        <p>اضغط على أي مصدر لفتح التفاصيل والروابط.</p>
-      </div>
-    </div>
-    <div class="accordion">
-      
-        <div class="resource-card" id="acc1">
-          <div class="resource-head" onclick="toggleAccordion('acc1')">
-            <div class="resource-title">
-              <div class="res-icon">🧱</div>
-              <div>
-                <h3>OOP Concepts Explanation</h3>
-                <p>مدخل ممتاز لفهم الـ Class وObject وMethods وAttributes.</p>
-              </div>
-            </div>
-            <div class="arrow">⌄</div>
-          </div>
-          <div class="resource-body">
-            <div class="resource-inner">
-              مناسب جدًا كمقدمة لفهم شكل البرمجة الكائنية التوجه قبل الانتقال للتطبيق العملي.
-              <div class="meta-grid"><div class="meta-item"><b>المفاهيم الأساسية</b>Class – Object – Method – Attribute</div><div class="meta-item"><b>المستوى</b>Beginner</div><div class="meta-item"><b>اللغة</b>English</div></div>
-              <div class="links-row"><a class="primary-btn" href="https://youtu.be/JeznW_7DlB0" target="_blank">مشاهدة الشرح</a></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="resource-card" id="acc2">
-          <div class="resource-head" onclick="toggleAccordion('acc2')">
-            <div class="resource-title">
-              <div class="res-icon">🎥</div>
-              <div>
-                <h3>Programming with Mosh</h3>
-                <p>شرح جيد لمبادئ OOP ومفاهيمها الأساسية.</p>
-              </div>
-            </div>
-            <div class="arrow">⌄</div>
-          </div>
-          <div class="resource-body">
-            <div class="resource-inner">
-              يساعد على فهم Encapsulation وInheritance وPolymorphism بأسلوب مرتب.
-              <div class="meta-grid"><div class="meta-item"><b>المفاهيم المشروحة</b>Encapsulation – Inheritance – Polymorphism</div><div class="meta-item"><b>المدة</b>حوالي 1 ساعة</div><div class="meta-item"><b>اللغة</b>English</div></div>
-              <div class="links-row"><a class="primary-btn" href="https://youtu.be/ZDa-Z5JzLYM" target="_blank">مشاهدة الفيديو</a></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="resource-card" id="acc3">
-          <div class="resource-head" onclick="toggleAccordion('acc3')">
-            <div class="resource-title">
-              <div class="res-icon">🐍</div>
-              <div>
-                <h3>Corey Schafer OOP Python</h3>
-                <p>من أفضل الشروحات العملية لفهم OOP في Python.</p>
-              </div>
-            </div>
-            <div class="arrow">⌄</div>
-          </div>
-          <div class="resource-body">
-            <div class="resource-inner">
-              إذا أردت الانتقال من الفهم النظري إلى التطبيق العملي في Python فهذا من أقوى المصادر.
-              <div class="meta-grid"><div class="meta-item"><b>المواضيع</b>Classes – Constructors – Methods</div><div class="meta-item"><b>المستوى</b>Beginner → Intermediate</div><div class="meta-item"><b>اللغة</b>English</div></div>
-              <div class="links-row"><a class="primary-btn" href="https://www.youtube.com/@Coreyms" target="_blank">فتح القناة</a></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="resource-card" id="acc4">
-          <div class="resource-head" onclick="toggleAccordion('acc4')">
-            <div class="resource-title">
-              <div class="res-icon">📘</div>
-              <div>
-                <h3>Head First Object-Oriented Programming</h3>
-                <p>كتاب ممتاز لشرح OOP بطريقة سهلة ومبسطة.</p>
-              </div>
-            </div>
-            <div class="arrow">⌄</div>
-          </div>
-          <div class="resource-body">
-            <div class="resource-inner">
-              يركز على المفاهيم الأساسية ويقدمها بأسلوب مرئي وسلس ومناسب جدًا للمبتدئين.
-              <div class="meta-grid"><div class="meta-item"><b>الصفحات المقترحة</b>1 → 200</div><div class="meta-item"><b>المواضيع</b>Encapsulation – Inheritance – Polymorphism – Abstraction</div><div class="meta-item"><b>النوع</b>كتاب</div></div>
-              <div class="links-row"><a class="primary-btn" href="https://www.oreilly.com/library/view/head-first-object-oriented/9781492077992/" target="_blank">موقع الكتاب</a></div>
-            </div>
-          </div>
-        </div>
-        
-    </div>
-  </section>
+<h1>OOP Concepts</h1>
 
-  <footer>AI Engineer Roadmap • OOP Concepts</footer>
+<p class="subtitle">
+البرمجة كائنية التوجه (Object Oriented Programming) هي أحد أهم المفاهيم في البرمجة الحديثة، 
+وتستخدم في معظم لغات البرمجة مثل Python وJava وC++ لبناء برامج منظمة وقابلة للتوسع.
+</p>
+
 </div>
 
 
-<script>
-const PAGE_KEY = "OOP Concepts.html";
-const PAGE_TITLE = "OOP Concepts";
+<!-- OOP basics -->
 
-function getGlobalData(){
-  const raw = localStorage.getItem("ai-roadmap-progress");
-  if(raw){
-    try { return JSON.parse(raw); } catch(e){}
-  }
-  const def = {
-    theme:"dark",
-    stages:{
-      "Python Fundamentals.html": {started:false, videos:false, exercises:false},
-      "Data Structures.html": {started:false, videos:false, exercises:false},
-      "OOP Concepts.html": {started:false, videos:false, exercises:false},
-      "Git and GitHub.html": {started:false, videos:false, exercises:false}
-    }
-  };
-  localStorage.setItem("ai-roadmap-progress", JSON.stringify(def));
-  return def;
-}
-function saveGlobalData(data){
-  localStorage.setItem("ai-roadmap-progress", JSON.stringify(data));
-}
-function applyTheme(){
-  const data = getGlobalData();
-  document.body.classList.toggle("light", data.theme === "light");
-  const themeLabel = document.getElementById("themeLabel");
-  if(themeLabel){ themeLabel.textContent = data.theme === "light" ? "Dark Mode" : "Light Mode"; }
-}
-function toggleTheme(){
-  const data = getGlobalData();
-  data.theme = data.theme === "light" ? "dark" : "light";
-  saveGlobalData(data);
-  applyTheme();
-}
-function loadStageChecks(){
-  const data = getGlobalData();
-  const stage = data.stages[PAGE_KEY] || {started:false, videos:false, exercises:false};
-  ["started","videos","exercises"].forEach(id=>{
-    const el = document.getElementById(id);
-    if(el) el.checked = !!stage[id];
-  });
-  renderPageProgress();
-}
-function updateStageProgress(){
-  const data = getGlobalData();
-  data.stages[PAGE_KEY] = {
-    started: document.getElementById("started")?.checked || false,
-    videos: document.getElementById("videos")?.checked || false,
-    exercises: document.getElementById("exercises")?.checked || false
-  };
-  saveGlobalData(data);
-  renderPageProgress();
-}
-function stagePercent(stageObj){
-  const vals = [stageObj.started, stageObj.videos, stageObj.exercises];
-  const done = vals.filter(Boolean).length;
-  return Math.round(done / vals.length * 100);
-}
-function getOverallPercent(){
-  const data = getGlobalData();
-  const stages = Object.values(data.stages);
-  const total = stages.length * 3;
-  const done = stages.reduce((acc,s)=>acc + [s.started,s.videos,s.exercises].filter(Boolean).length,0);
-  return Math.round(done / total * 100);
-}
-function renderPageProgress(){
-  const data = getGlobalData();
-  const page = data.stages[PAGE_KEY] || {started:false, videos:false, exercises:false};
-  const p = stagePercent(page);
-  const fill = document.getElementById("pageProgressFill");
-  const percent = document.getElementById("pagePercent");
-  const overall = document.getElementById("overallPercent");
-  if(fill) fill.style.width = p + "%";
-  if(percent) percent.textContent = p + "%";
-  if(overall) overall.textContent = getOverallPercent() + "%";
-}
-function filterCards(){
-  const q = document.getElementById("searchInput").value.trim().toLowerCase();
-  document.querySelectorAll(".resource-card").forEach(card=>{
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(q) ? "" : "none";
-  });
-}
-function toggleAccordion(id){
-  const card = document.getElementById(id);
-  card.classList.toggle("open");
-}
-window.addEventListener("DOMContentLoaded", ()=>{
-  applyTheme();
-  loadStageChecks();
-  const active = document.querySelector('[data-page="'+PAGE_KEY+'"]');
-  if(active) active.classList.add("active");
-});
-</script>
+<div class="channel">
+<div class="channel-header" onclick="toggleContent('c1')">
+<span class="toggle">⌄</span>
+<h2 class="channel-title">📺 OOP Concepts Explanation</h2>
+</div>
+
+<div id="c1" class="content">
+<div class="content-box">
+
+شرح أساسيات OOP مثل:
+
+Class  
+Object  
+Methods  
+Attributes
+
+<div class="meta">
+
+<div class="meta-card">
+<b>المفاهيم الأساسية</b>
+Class – Object – Method – Attribute
+</div>
+
+<div class="meta-card">
+<b>المستوى</b>
+Beginner
+</div>
+
+</div>
+
+<div class="links">
+<a href="https://youtu.be/JeznW_7DlB0" target="_blank">مشاهدة الشرح</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Programming with Mosh -->
+
+<div class="channel">
+<div class="channel-header" onclick="toggleContent('c2')">
+<span class="toggle">⌄</span>
+<h2 class="channel-title">📺 Programming with Mosh</h2>
+</div>
+
+<div id="c2" class="content">
+<div class="content-box">
+
+شرح رائع لمفاهيم OOP باستخدام Python.
+
+<div class="meta">
+
+<div class="meta-card">
+<b>المفاهيم المشروحة</b>
+Encapsulation – Inheritance – Polymorphism
+</div>
+
+<div class="meta-card">
+<b>المدة</b>
+1 ساعة
+</div>
+
+</div>
+
+<div class="links">
+<a href="https://youtu.be/ZDa-Z5JzLYM" target="_blank">مشاهدة الفيديو</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Corey Schafer -->
+
+<div class="channel">
+<div class="channel-header" onclick="toggleContent('c3')">
+<span class="toggle">⌄</span>
+<h2 class="channel-title">📺 Corey Schafer OOP Python</h2>
+</div>
+
+<div id="c3" class="content">
+<div class="content-box">
+
+واحد من أفضل الشروحات لفهم OOP في Python بعمق.
+
+<div class="meta">
+
+<div class="meta-card">
+<b>المواضيع</b>
+Classes – Constructors – Methods
+</div>
+
+<div class="meta-card">
+<b>المستوى</b>
+Beginner → Intermediate
+</div>
+
+</div>
+
+<div class="links">
+<a href="https://www.youtube.com/@Coreyms" target="_blank">فتح القناة</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<!-- Book -->
+
+<div class="channel">
+<div class="channel-header" onclick="toggleContent('c4')">
+<span class="toggle">⌄</span>
+<h2 class="channel-title">📚 Head First Object Oriented Programming</h2>
+</div>
+
+<div id="c4" class="content">
+<div class="content-box">
+
+كتاب رائع لفهم مفاهيم OOP بطريقة بسيطة وسهلة.
+
+<div class="meta">
+
+<div class="meta-card">
+<b>الصفحات المقترحة</b>
+1 → 200
+</div>
+
+<div class="meta-card">
+<b>المواضيع</b>
+Encapsulation – Inheritance – Polymorphism – Abstraction
+</div>
+
+</div>
+
+<div class="links">
+<a href="https://www.oreilly.com/library/view/head-first-object-oriented/9781492077992/" target="_blank">موقع الكتاب</a>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<a class="back" href="index.html">⬅ العودة إلى Roadmap</a>
+
+<div class="footer">
+AI Engineer Roadmap
+</div>
+
+</div>
 
 </body>
 </html>
