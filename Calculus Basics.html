@@ -1,1 +1,130 @@
-<!DOCTYPE html><html lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Calculus Basics</title><link rel="stylesheet" href="roadmap-style.css"><script src="roadmap.js"></script></head><body><div class="navbar"><div class="nav-inner"><div class="brand">AI Roadmap</div><div class="nav-links"><a href="index.html">Roadmap</a><a href="Linear Algebra.html" class="">Linear Algebra</a><a href="Calculus Basics.html" class="active">Calculus</a><a href="Probability and Statistics.html" class="">Statistics</a><a href="Optimization.html" class="">Optimization</a></div></div></div><div class="container"><div class="hero"><div class="phase-pill">Phase 2</div><h1>Calculus Basics</h1><p class="subtitle">التفاضل مهم لأنه يشرح لك كيف تتغير الدوال، ولماذا تستطيع النماذج أن تتعلم باستخدام المشتقات والانحدار التدريجي. خذ منه ما يخدمك في AI أولًا.</p><div class="badges"><span class="badge">المشتقات أولًا</span><span class="badge">أساس لفهم Gradient Descent</span><span class="badge">لا تبدأ بالصعب</span></div></div><div class="card"><div class="card-header" onclick="toggleContent('c1', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📘 Differential Calculus</h2></div><div id="c1" class="card-body"><div class="inner"><p>ابدأ من هذا المسار إذا أردت فهم المشتقة، معدلات التغير، ولماذا هذه الفكرة مركزية جدًا في تدريب النماذج.</p><div class="meta"><div class="meta-card"><b>ركّز على</b>Limits – Derivatives – Chain Rule</div><div class="meta-card"><b>لماذا مهم؟</b>لأن Backpropagation و Gradient Descent يعتمدان عليه</div></div><div class="links"><a href="https://www.khanacademy.org/math/differential-calculus" target="_blank" rel="noopener noreferrer">Khan Academy - Differential Calculus</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c2', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📗 Calculus 1 كمراجعة أوسع</h2></div><div id="c2" class="card-body"><div class="inner"><p>إذا شعرت أن أساسك الرياضي يحتاج توسعة أكثر، استخدم هذا المسار لبناء فهم أهدأ وأكثر ترتيبًا قبل العودة لتطبيقات الذكاء الاصطناعي.</p><div class="meta"><div class="meta-card"><b>الأنسب له</b>تقوية الأساس الرياضي</div><div class="meta-card"><b>لازم تخلصه كامل؟</b>ليس شرطًا؛ خذ الأجزاء التي تخدمك الآن</div></div><div class="links"><a href="https://www.khanacademy.org/math/calculus-1" target="_blank" rel="noopener noreferrer">Khan Academy - Calculus 1</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c3', this)"><span class="card-toggle">⌄</span><h2 class="card-title">🎓 أين يظهر ذلك في تعلم الآلة؟</h2></div><div id="c3" class="card-body"><div class="inner"><p>لاحظ داخل تخصص تعلم الآلة كيف تُستخدم المشتقات لتحسين الدوال وتقليل الخطأ. هذا الربط هو الذي يجعل التفاضل مفهومًا بدل أن يبقى مجرد رياضيات مجردة.</p><div class="meta"><div class="meta-card"><b>اربط مع</b>Cost Function – Gradient Descent</div><div class="meta-card"><b>النتيجة</b>تفهم لماذا يتعلم الموديل خطوة بخطوة</div></div><div class="links"><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener noreferrer">Machine Learning Specialization - Coursera</a></div></div></div></div><div class="footer-actions"><a class="btn back" href="index.html">⬅ العودة إلى الـ Roadmap</a></div><div class="footer">AI Engineer Roadmap<br>تم توحيد التصميم على جميع الصفحات مع توزيع المصادر في أماكنها الأنسب داخل كل مرحلة.</div></div></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Basics</title>
+
+    <link rel="stylesheet" href="roadmap-style.css">
+    <script src="roadmap.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="nav-inner">
+            <div class="brand">AI Roadmap</div>
+
+            <div class="nav-links">
+                <a href="index.html">Roadmap</a>
+                <a href="Linear Algebra.html">Linear Algebra</a>
+                <a href="Calculus Basics.html" class="active">Calculus</a>
+                <a href="Probability and Statistics.html">Statistics</a>
+                <a href="Optimization.html">Optimization</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="phase-pill">Phase 2</div>
+
+            <h1>Calculus Basics</h1>
+
+            <p class="subtitle">
+                التفاضل مهم لأنه يشرح لك كيف تتغير الدوال،
+                ولماذا تستطيع النماذج أن تتعلم باستخدام المشتقات
+                والانحدار التدريجي. خذ منه ما يخدمك في AI أولًا.
+            </p>
+
+            <div class="badges">
+                <span class="badge">المشتقات أولًا</span>
+                <span class="badge">أساس لفهم Gradient Descent</span>
+                <span class="badge">لا تبدأ بالصعب</span>
+            </div>
+        </div>
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c1', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">📘 Differential Calculus</h2>
+            </div>
+
+            <div id="c1" class="card-body">
+                <div class="inner">
+                    <p>
+                        ابدأ من هذا المسار إذا أردت فهم المشتقة،
+                        معدلات التغير، ولماذا هذه الفكرة مركزية جدًا
+                        في تدريب النماذج.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>ركّز على</b>
+                            Limits – Derivatives – Chain Rule
+                        </div>
+
+                        <div class="meta-card">
+                            <b>لماذا مهم؟</b>
+                            لأن Backpropagation و Gradient Descent يعتمدان عليه
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.khanacademy.org/math/differential-calculus"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Khan Academy - Differential Calculus
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c2', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">📗 Calculus 1 كمراجعة أوسع</h2>
+            </div>
+
+            <div id="c2" class="card-body">
+                <div class="inner">
+                    <p>
+                        إذا شعرت أن أساسك الرياضي يحتاج توسعة أكثر،
+                        استخدم هذا المسار لبناء فهم أهدأ وأكثر ترتيبًا
+                        قبل العودة لتطبيقات الذكاء الاصطناعي.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>الأنسب له</b>
+                            تقوية الأساس الرياضي
+                        </div>
+
+                        <div class="meta-card">
+                            <b>لازم تخلصه كامل؟</b>
+                            ليس شرطًا؛ خذ الأجزاء التي تخدمك الآن
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.khanacademy.org/math/calculus-1"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Khan Academy - Calculus 1
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+</body>
+</html>
