@@ -1,1 +1,161 @@
-<!DOCTYPE html><html lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NumPy</title><link rel="stylesheet" href="roadmap-style.css"><script src="roadmap.js"></script></head><body><div class="navbar"><div class="nav-inner"><div class="brand">AI Roadmap</div><div class="nav-links"><a href="index.html">Roadmap</a><a href="Numpy.html" class="active">NumPy</a><a href="Pandas.html" class="">Pandas</a><a href="Data Visualization.html" class="">Visualization</a></div></div></div><div class="container"><div class="hero"><div class="phase-pill">Phase 3</div><h1>NumPy</h1><p class="subtitle">NumPy هي المكتبة الأساسية للحسابات العددية والمصفوفات في Python. ستحتاجها في كل شيء تقريبًا: بيانات، نماذج، ومعالجات عددية.</p><div class="badges"><span class="badge">مصفوفات وحسابات</span><span class="badge">أساس للعمل العلمي</span><span class="badge">تسرّع الكود</span></div></div><div class="card"><div class="card-header" onclick="toggleContent('c1', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📺 NumPy بالعربي مع هشام عاصم</h2></div><div id="c1" class="card-body"><div class="inner"><p>داخل هذه السلسلة ركّز على دروس NumPy فقط. هذا هو الجزء الأنسب من المصدر الذي أرسلته لهذه الصفحة.</p><div class="meta"><div class="meta-card"><b>الفيديوهات المطلوبة</b>44 → 54</div><div class="meta-card"><b>المحتوى</b>Arrays – Indexing – Shapes – Operations</div></div><div class="links"><a href="https://www.youtube.com/watch?v=BbuyR2HDn0U&amp;list=PL6-3IRz2XF5UM-FWfQeF1_YhMMa12Eg3s&amp;pp=0gcJCbQEOCosWNin" target="_blank" rel="noopener noreferrer">سلسلة مكتبات Python للذكاء الاصطناعي - هشام عاصم</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c2', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📘 NumPy Beginner Guide</h2></div><div id="c2" class="card-body"><div class="inner"><p>إذا أردت مرجعًا رسميًا مرتبًا فابدأ بدليل المبتدئين ثم انتقل للـ Quickstart. هذا يعطيك فهمًا أنظف للبنية والأبعاد والعمليات الأساسية.</p><div class="meta"><div class="meta-card"><b>التركيز</b>ndarray – shape – axis – vectorized operations</div><div class="meta-card"><b>أفضل استخدام</b>مع التطبيق داخل Notebook</div></div><div class="links"><a href="https://numpy.org/doc/stable/user/absolute_beginners.html" target="_blank" rel="noopener noreferrer">NumPy Absolute Beginner Guide</a><a href="https://numpy.org/devdocs/user/quickstart.html" target="_blank" rel="noopener noreferrer">NumPy Quickstart</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c3', this)"><span class="card-toggle">⌄</span><h2 class="card-title">🎯 ما الذي يجب أن تتقنه؟</h2></div><div id="c3" class="card-body"><div class="inner"><p>يجب أن تصبح مرتاحًا مع إنشاء المصفوفات، إعادة تشكيلها، الفهرسة، والعمليات العددية بدون loops قدر الإمكان. هذا يسهّل عليك فهم البيانات والـ tensors لاحقًا.</p><div class="meta"><div class="meta-card"><b>الحد الأدنى</b>إنشاء مصفوفات + عمليات أساسية + broadcasting بسيط</div><div class="meta-card"><b>النتيجة</b>جاهزية أفضل لـ Pandas وDL</div></div></div></div></div><div class="footer-actions"><a class="btn back" href="index.html">⬅ العودة إلى الـ Roadmap</a></div><div class="footer">AI Engineer Roadmap<br>تم توحيد التصميم على جميع الصفحات مع توزيع المصادر في أماكنها الأنسب داخل كل مرحلة.</div></div></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumPy</title>
+
+    <link rel="stylesheet" href="roadmap-style.css">
+    <script src="roadmap.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="nav-inner">
+            <div class="brand">AI Roadmap</div>
+
+            <div class="nav-links">
+                <a href="index.html">Roadmap</a>
+                <a href="Numpy.html" class="active">NumPy</a>
+                <a href="Pandas.html">Pandas</a>
+                <a href="Data Visualization.html">Visualization</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="phase-pill">Phase 3</div>
+
+            <h1>NumPy</h1>
+
+            <p class="subtitle">
+                NumPy هي المكتبة الأساسية للحسابات العددية والمصفوفات في Python.
+                ستحتاجها في كل شيء تقريبًا: بيانات، نماذج، ومعالجات عددية.
+            </p>
+
+            <div class="badges">
+                <span class="badge">مصفوفات وحسابات</span>
+                <span class="badge">أساس للعمل العلمي</span>
+                <span class="badge">تسرّع الكود</span>
+            </div>
+        </div>
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c1', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">📺 NumPy بالعربي مع هشام عاصم</h2>
+            </div>
+
+            <div id="c1" class="card-body">
+                <div class="inner">
+                    <p>
+                        داخل هذه السلسلة ركّز على دروس NumPy فقط.
+                        هذا هو الجزء الأنسب من المصدر الذي أرسلته لهذه الصفحة.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>الفيديوهات المطلوبة</b>
+                            44 → 54
+                        </div>
+
+                        <div class="meta-card">
+                            <b>المحتوى</b>
+                            Arrays – Indexing – Shapes – Operations
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.youtube.com/watch?v=BbuyR2HDn0U&list=PL6-3IRz2XF5UM-FWfQeF1_YhMMa12Eg3s"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            سلسلة مكتبات Python للذكاء الاصطناعي - هشام عاصم
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c2', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">📘 NumPy Beginner Guide</h2>
+            </div>
+
+            <div id="c2" class="card-body">
+                <div class="inner">
+                    <p>
+                        إذا أردت مرجعًا رسميًا مرتبًا فابدأ بدليل المبتدئين
+                        ثم انتقل للـ Quickstart.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>التركيز</b>
+                            ndarray – shape – axis – vectorized operations
+                        </div>
+
+                        <div class="meta-card">
+                            <b>أفضل استخدام</b>
+                            مع التطبيق داخل Notebook
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://numpy.org/doc/stable/user/absolute_beginners.html"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            NumPy Absolute Beginner Guide
+                        </a>
+
+                        <a href="https://numpy.org/devdocs/user/quickstart.html"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            NumPy Quickstart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c3', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">🎯 ما الذي يجب أن تتقنه؟</h2>
+            </div>
+
+            <div id="c3" class="card-body">
+                <div class="inner">
+                    <p>
+                        يجب أن تصبح مرتاحًا مع إنشاء المصفوفات،
+                        إعادة تشكيلها، الفهرسة، والعمليات العددية بدون loops.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>الحد الأدنى</b>
+                            إنشاء مصفوفات + عمليات أساسية + broadcasting بسيط
+                        </div>
+
+                        <div class="meta-card">
+                            <b>النتيجة</b>
+                            جاهزية أفضل لـ Pandas وDL
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
