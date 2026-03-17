@@ -1,1 +1,91 @@
-<!DOCTYPE html><html lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Probability and Statistics</title><link rel="stylesheet" href="roadmap-style.css"><script src="roadmap.js"></script></head><body><div class="navbar"><div class="nav-inner"><div class="brand">AI Roadmap</div><div class="nav-links"><a href="index.html">Roadmap</a><a href="Linear Algebra.html" class="">Linear Algebra</a><a href="Calculus Basics.html" class="">Calculus</a><a href="Probability and Statistics.html" class="active">Statistics</a><a href="Optimization.html" class="">Optimization</a></div></div></div><div class="container"><div class="hero"><div class="phase-pill">Phase 2</div><h1>Probability and Statistics</h1><p class="subtitle">الاحتمالات والإحصاء مهمان لأنك ستحتاجهما لفهم البيانات، التوزيعات، التقييم، واللايقين داخل النماذج. هذه الصفحة تعطيك المدخل الذي يكفيك لتبدأ صح.</p><div class="badges"><span class="badge">مهم لفهم البيانات</span><span class="badge">أساس للتقييم</span><span class="badge">يربط الرياضيات بالواقع</span></div></div><div class="card"><div class="card-header" onclick="toggleContent('c1', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📘 Khan Academy - Statistics and Probability</h2></div><div id="c1" class="card-body"><div class="inner"><p>مسار ممتاز لبناء الأساس المفاهيمي: المتوسطات، التباين، التوزيعات، الاحتمال الشرطي، والعينات. خذه بهدوء لأنه يؤثر على كل ما بعده.</p><div class="meta"><div class="meta-card"><b>ركّز على</b>Descriptive Statistics – Probability – Sampling – Distributions</div><div class="meta-card"><b>الأولوية</b>الفهم العملي أكثر من الرموز الكثيرة</div></div><div class="links"><a href="https://www.khanacademy.org/math/statistics-probability" target="_blank" rel="noopener noreferrer">Khan Academy - Statistics and Probability</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c2', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📺 نادي تحليل البيانات</h2></div><div id="c2" class="card-body"><div class="inner"><p>هذا المصدر مفيد جدًا بالعربي لربط الإحصاء بتحليل البيانات الفعلي، وخاصة في مرحلة التحضير قبل النمذجة وفهم البيانات قبل اتخاذ أي قرار.</p><div class="meta"><div class="meta-card"><b>استخدمه في</b>الإحصاء العملي + تحليل البيانات + preprocessing</div><div class="meta-card"><b>الفائدة</b>فهم البيانات قبل بناء النموذج</div></div><div class="links"><a href="https://www.youtube.com/playlist?list=PL1DUmTEdeA6JlommmGP5wicYLxX5PVCQt" target="_blank" rel="noopener noreferrer">قناة نادي تحليل البيانات</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c3', this)"><span class="card-toggle">⌄</span><h2 class="card-title">🎓 كيف يظهر هذا داخل ML؟</h2></div><div id="c3" class="card-body"><div class="inner"><p>ضمن تخصص تعلم الآلة ستلاحظ كيف تدخل هذه المفاهيم في تقييم النماذج، فهم البيانات، واختيار الطريقة الأنسب للتمثيل والتنبؤ.</p><div class="meta"><div class="meta-card"><b>اربط مع</b>Bias/Variance – Metrics – Probability View</div><div class="meta-card"><b>مهم جدًا لـ</b>Model Evaluation لاحقًا</div></div><div class="links"><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener noreferrer">Machine Learning Specialization - Coursera</a></div></div></div></div><div class="footer-actions"><a class="btn back" href="index.html">⬅ العودة إلى الـ Roadmap</a></div><div class="footer">AI Engineer Roadmap<br>تم توحيد التصميم على جميع الصفحات مع توزيع المصادر في أماكنها الأنسب داخل كل مرحلة.</div></div></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probability and Statistics</title>
+
+    <link rel="stylesheet" href="roadmap-style.css">
+    <script src="roadmap.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="nav-inner">
+            <div class="brand">AI Roadmap</div>
+
+            <div class="nav-links">
+                <a href="index.html">Roadmap</a>
+                <a href="Linear Algebra.html">Linear Algebra</a>
+                <a href="Calculus Basics.html">Calculus</a>
+                <a href="Probability and Statistics.html" class="active">Statistics</a>
+                <a href="Optimization.html">Optimization</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <div class="hero">
+            <div class="phase-pill">Phase 2</div>
+
+            <h1>Probability and Statistics</h1>
+
+            <p class="subtitle">
+                الاحتمالات والإحصاء مهمان لأنك ستحتاجهما لفهم البيانات،
+                التوزيعات، التقييم، واللايقين داخل النماذج.
+                هذه الصفحة تعطيك المدخل الذي يكفيك لتبدأ صح.
+            </p>
+
+            <div class="badges">
+                <span class="badge">مهم لفهم البيانات</span>
+                <span class="badge">أساس للتقييم</span>
+                <span class="badge">يربط الرياضيات بالواقع</span>
+            </div>
+        </div>
+
+        <!-- CARD 1 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c1', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">📘 Khan Academy - Statistics and Probability</h2>
+            </div>
+
+            <div id="c1" class="card-body">
+                <div class="inner">
+                    <p>
+                        مسار ممتاز لبناء الأساس المفاهيمي:
+                        المتوسطات، التباين، التوزيعات، الاحتمال الشرطي، والعينات.
+                        خذه بهدوء لأنه يؤثر على كل ما بعده.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>ركّز على</b>
+                            Descriptive Statistics – Probability – Sampling – Distributions
+                        </div>
+
+                        <div class="meta-card">
+                            <b>الأولوية</b>
+                            الفهم العملي أكثر من الرموز الكثيرة
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.khanacademy.org/math/statistics-probability"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Khan Academy - Statistics and Probability
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+</html>
