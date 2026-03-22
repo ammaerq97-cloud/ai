@@ -1,1 +1,179 @@
-<!DOCTYPE html><html lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>NLP</title><link rel="stylesheet" href="roadmap-style.css"><script src="roadmap.js"></script></head><body><div class="navbar"><div class="nav-inner"><div class="brand">AI Roadmap</div><div class="nav-links"><a href="index.html">Roadmap</a><a href="Computer Vision.html" class="">CV</a><a href="NLP.html" class="active">NLP</a><a href="Generative AI.html" class="">GenAI</a><a href="Reinforcement Learning.html" class="">RL</a><a href="MLOps.html" class="">MLOps</a></div></div></div><div class="container"><div class="hero"><div class="phase-pill">Phase 6</div><h1>NLP</h1><p class="subtitle">معالجة اللغة الطبيعية تهتم بجعل الحاسوب يفهم النصوص ويحللها ويولدها. هذه الصفحة تبني لك الانتقال من النص التقليدي إلى أنظمة LLM الحديثة.</p><div class="badges"><span class="badge">نصوص ولغات</span><span class="badge">مدخل إلى LLMs</span><span class="badge">مهم للتطبيقات النصية</span></div></div><div class="card"><div class="card-header" onclick="toggleContent('c1', this)"><span class="card-toggle">⌄</span><h2 class="card-title">🤗 Hugging Face LLM Course</h2></div><div id="c1" class="card-body"><div class="inner"><p>هذا المصدر ممتاز جدًا لفهم NLP الحديث من خلال بيئة Hugging Face: tokenization، pipelines، النماذج الجاهزة، والتعامل مع النصوص عمليًا.</p><div class="meta"><div class="meta-card"><b>اركز على</b>Tokenization – pipelines – classification – text generation basics</div><div class="meta-card"><b>الأنسب</b>كمصدر حديث وعملي</div></div><div class="links"><a href="https://huggingface.co/learn/llm-course/en/chapter1/1" target="_blank" rel="noopener noreferrer">Hugging Face LLM Course</a><a href="https://huggingface.co/docs/transformers/en/index" target="_blank" rel="noopener noreferrer">Transformers Documentation</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c2', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📘 spaCy Course</h2></div><div id="c2" class="card-body"><div class="inner"><p>إذا أردت فهم NLP التطبيقي الكلاسيكي مثل entity recognition و parsing و rule-based workflows، فهذا المصدر ممتاز جدًا ومباشر.</p><div class="meta"><div class="meta-card"><b>اركز على</b>NER – Text processing – practical NLP pipelines</div><div class="meta-card"><b>الفائدة</b>رؤية NLP خارج نطاق LLM فقط</div></div><div class="links"><a href="https://course.spacy.io/en/" target="_blank" rel="noopener noreferrer">Advanced NLP with spaCy</a><a href="https://spacy.io/usage/spacy-101" target="_blank" rel="noopener noreferrer">spaCy 101</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c3', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📺 شرح Transformers بالعربي</h2></div><div id="c3" class="card-body"><div class="inner"><p>ارجع للفيديو العربي متى ما أردت ربط فكرة الـ NLP بالـ Transformers والـ Attention بشكل مبسط قبل الرجوع إلى التطبيق العملي.</p><div class="meta"><div class="meta-card"><b>مفيد لـ</b>تثبيت المفهوم</div><div class="meta-card"><b>يمهّد لـ</b>Generative AI</div></div><div class="links"><a href="https://youtu.be/6JGzwI2pNfo?si=k6TqYAbsW_aZI39e" target="_blank" rel="noopener noreferrer">شرح Transformers بالعربي</a></div></div></div></div><div class="footer-actions"><a class="btn back" href="index.html">⬅ العودة إلى الـ Roadmap</a></div><div class="footer">AI Engineer Roadmap<br>تم توحيد التصميم على جميع الصفحات مع توزيع المصادر في أماكنها الأنسب داخل كل مرحلة.</div></div></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM</title>
+
+    <link rel="stylesheet" href="roadmap-style.css">
+    <script src="roadmap.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-inner">
+            <div class="brand">AI Roadmap</div>
+
+            <div class="nav-links">
+                <a href="index.html">Roadmap</a>
+                <a href="Computer Vision.html">CV</a>
+                <a href="NLP.html" class="active">LLM</a>
+                <a href="Generative AI.html">GenAI</a>
+                <a href="Reinforcement Learning.html">RL</a>
+                <a href="MLOps.html">MLOps</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="phase-pill">Phase 6</div>
+
+            <h1>LLM (Large Language Models)</h1>
+
+            <p class="subtitle">
+                النماذج اللغوية الكبيرة (LLM) هي من أهم مجالات الذكاء الاصطناعي حاليًا،
+                وتستخدم في بناء الأنظمة الذكية مثل ChatGPT، الترجمة، وتوليد النصوص.
+            </p>
+
+            <div class="badges">
+                <span class="badge">NLP Advanced</span>
+                <span class="badge">Transformers</span>
+                <span class="badge">Generative AI</span>
+            </div>
+        </div>
+
+        <!-- Single Card -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c1', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">🧠 LLM Resources</h2>
+            </div>
+
+            <div id="c1" class="card-body">
+                <div class="inner">
+
+                    <!-- Source 1 -->
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>📺 المصدر الأول</b><br>
+                            مقدمة عن LLM مع سليمان أبو بكر،
+                            يمكنك تخطي المقدمة العامة عن AI والتركيز على شرح النماذج اللغوية.
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://youtu.be/kSQcSzPyRIU?si=AKFCHXG_JDT1H4Rp"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            مقدمة LLM
+                        </a>
+                    </div>
+
+                    <br>
+
+                    <!-- Source 2 -->
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>📚 المصدر الثاني</b><br>
+                            تعلم معالجة اللغات الطبيعية من البداية
+                            من خلال قوائم الفيديوهات الخاصة بهشام عاصم (NLP).
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.youtube.com/@HeshamAsem/playlists"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            قوائم NLP - هشام عاصم
+                        </a>
+                    </div>
+
+                    <br>
+
+                    <!-- Source 3 -->
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>📦 المصدر الثالث</b><br>
+                            مقدمة عن Vector Databases مع سليمان أبو بكر،
+                            وهي عنصر أساسي في بناء أنظمة LLM الحديثة (RAG).
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.youtube.com/watch?v=reAmcocQyBA&t=2023s"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Vector DB - Video 1
+                        </a>
+
+                        <a href="https://www.youtube.com/watch?v=VCnhiF88a9c"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Vector DB - Video 2
+                        </a>
+                    </div>
+
+                    <br>
+
+                    <!-- Source 4 -->
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>⚙️ المصدر الرابع</b><br>
+                            تعلم أهم ابتكار في LLM وهو Transformers:
+                            شرح مبسط من جهاد العامر + فيديو عربي مع سليمان أبو بكر.
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://jalammar.github.io/illustrated-transformer/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Illustrated Transformer
+                        </a>
+
+                        <a href="https://youtu.be/6JGzwI2pNfo?si=m4oxEvpajwodTPGM"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            شرح Transformers
+                        </a>
+                    </div>
+
+                    <br>
+
+                    <!-- Source 5 -->
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>🚀 المصدر الخامس</b><br>
+                            ابدأ بتدريب النماذج الصغيرة (Model Fine-Tuning)
+                            لتدخل فعليًا في بناء مشاريع LLM حقيقية.
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.youtube.com/live/S9VHQhC3HPc?si=cFdR5Q2nkGAvdOUi"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Fine-Tuning LLM
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-actions">
+            <a class="btn back" href="index.html">⬅ العودة إلى الـ Roadmap</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
