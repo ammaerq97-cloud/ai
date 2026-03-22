@@ -1,1 +1,163 @@
-<!DOCTYPE html><html lang="ar"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Pandas</title><link rel="stylesheet" href="roadmap-style.css"><script src="roadmap.js"></script></head><body><div class="navbar"><div class="nav-inner"><div class="brand">AI Roadmap</div><div class="nav-links"><a href="index.html">Roadmap</a><a href="Numpy.html" class="">NumPy</a><a href="Pandas.html" class="active">Pandas</a><a href="Data Visualization.html" class="">Visualization</a></div></div></div><div class="container"><div class="hero"><div class="phase-pill">Phase 3</div><h1>Pandas</h1><p class="subtitle">Pandas هي المكتبة الأساسية للتعامل مع الجداول والبيانات المنظمة. ستستخدمها في التحميل، التنظيف، الفحص، والتحليل الأولي قبل أي نموذج.</p><div class="badges"><span class="badge">جداول وDataFrames</span><span class="badge">أساس preprocessing</span><span class="badge">ضرورية جدًا</span></div></div><div class="card"><div class="card-header" onclick="toggleContent('c1', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📺 Pandas بالعربي مع هشام عاصم</h2></div><div id="c1" class="card-body"><div class="inner"><p>استخدم نفس السلسلة لكن خصص هذه الصفحة لجزء Pandas فقط. هذه المقاطع مناسبة جدًا لتأسيس DataFrame operations.</p><div class="meta"><div class="meta-card"><b>الفيديوهات المطلوبة</b>55 → 65</div><div class="meta-card"><b>المحتوى</b>Series – DataFrames – Selection – Filtering – Basic Cleaning</div></div><div class="links"><a href="https://www.youtube.com/watch?v=BbuyR2HDn0U&amp;list=PL6-3IRz2XF5UM-FWfQeF1_YhMMa12Eg3s&amp;pp=0gcJCbQEOCosWNin" target="_blank" rel="noopener noreferrer">سلسلة مكتبات Python للذكاء الاصطناعي - هشام عاصم</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c2', this)"><span class="card-toggle">⌄</span><h2 class="card-title">📘 pandas Getting Started</h2></div><div id="c2" class="card-body"><div class="inner"><p>الوثائق الرسمية ممتازة جدًا إذا أردت أساسًا مرتبًا. اقرأ Getting Started ثم ارجع إلى 10 Minutes to pandas كمراجعة سريعة.</p><div class="meta"><div class="meta-card"><b>الأنسب للقراءة</b>Getting Started ثم 10 Minutes</div><div class="meta-card"><b>ركّز على</b>read, select, filter, group, merge basics</div></div><div class="links"><a href="https://pandas.pydata.org/docs/getting_started/index.html" target="_blank" rel="noopener noreferrer">pandas Getting Started</a><a href="https://pandas.pydata.org/docs/user_guide/10min.html" target="_blank" rel="noopener noreferrer">10 Minutes to pandas</a></div></div></div></div><div class="card"><div class="card-header" onclick="toggleContent('c3', this)"><span class="card-toggle">⌄</span><h2 class="card-title">💡 أين تستفيد منها فورًا؟</h2></div><div id="c3" class="card-body"><div class="inner"><p>ابدأ بتحميل CSV، تنظيف القيم الفارغة، اختيار الأعمدة، وتلخيص البيانات. هذا يكفيك مبدئيًا قبل الدخول إلى Data Cleaning بشكل أعمق.</p><div class="meta"><div class="meta-card"><b>الحد الأدنى</b>قراءة ملف + تنظيف بسيط + تلخيص</div><div class="meta-card"><b>المرحلة التالية</b>Data Cleaning و Feature Engineering</div></div></div></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas</title>
+
+    <link rel="stylesheet" href="roadmap-style.css">
+    <script src="roadmap.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="nav-inner">
+            <div class="brand">AI Roadmap</div>
+
+            <div class="nav-links">
+                <a href="index.html">Roadmap</a>
+                <a href="Numpy.html">NumPy</a>
+                <a href="Pandas.html" class="active">Pandas</a>
+                <a href="Data Visualization.html">Visualization</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="phase-pill">Phase 3</div>
+
+            <h1>Pandas</h1>
+
+            <p class="subtitle">
+                Pandas هي المكتبة الأساسية للتعامل مع الجداول والبيانات المنظمة.
+                ستستخدمها في التحميل، التنظيف، الفحص، والتحليل الأولي قبل أي نموذج.
+            </p>
+
+            <div class="badges">
+                <span class="badge">جداول و DataFrames</span>
+                <span class="badge">أساس preprocessing</span>
+                <span class="badge">ضرورية جدًا</span>
+            </div>
+        </div>
+
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c1', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">📺 Pandas مع هشام عاصم</h2>
+            </div>
+
+            <div id="c1" class="card-body">
+                <div class="inner">
+
+                    <p>
+                      استخدم مكتبة pandas للتعامل مع الملفات المختلفة واجراء العمليات عليها
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>الفيديوهات المطلوبة</b> 55 → 65
+                        </div>
+
+                        <div class="meta-card">
+                            <b>المحتوى</b>
+                            Series – DataFrames – Selection – Filtering – Basic Cleaning
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://www.youtube.com/watch?v=BbuyR2HDn0U&list=PL6-3IRz2XF5UM-FWfQeF1_YhMMa12Eg3s&pp=0gcJCbQEOCosWNin"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            سلسلة مكتبات Python للذكاء الاصطناعي - هشام عاصم
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c2', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">📘 pandas Getting Started</h2>
+            </div>
+
+            <div id="c2" class="card-body">
+                <div class="inner">
+
+                    <p>
+                        الوثائق الرسمية ممتازة جدًا إذا أردت أساسًا مرتبًا.
+                        اقرأ Getting Started ثم ارجع إلى 10 Minutes to pandas كمراجعة سريعة.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>الأنسب للقراءة</b> Getting Started ثم 10 Minutes
+                        </div>
+
+                        <div class="meta-card">
+                            <b>ركّز على</b> read, select, filter, group, merge basics
+                        </div>
+                    </div>
+
+                    <div class="links">
+                        <a href="https://pandas.pydata.org/docs/getting_started/index.html"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            pandas Getting Started
+                        </a>
+
+                        <a href="https://pandas.pydata.org/docs/user_guide/10min.html"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            10 Minutes to pandas
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-header" onclick="toggleContent('c3', this)">
+                <span class="card-toggle">⌄</span>
+                <h2 class="card-title">💡 أين تستفيد منها فورًا؟</h2>
+            </div>
+
+            <div id="c3" class="card-body">
+                <div class="inner">
+
+                    <p>
+                        ابدأ بتحميل CSV، تنظيف القيم الفارغة، اختيار الأعمدة،
+                        وتلخيص البيانات. هذا يكفيك مبدئيًا قبل الدخول إلى
+                        Data Cleaning بشكل أعمق.
+                    </p>
+
+                    <div class="meta">
+                        <div class="meta-card">
+                            <b>الحد الأدنى</b> قراءة ملف + تنظيف بسيط + تلخيص
+                        </div>
+
+                        <div class="meta-card">
+                            <b>المرحلة التالية</b> Data Cleaning و Feature Engineering
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
